@@ -1,10 +1,10 @@
 import React from "react";
 import Cart from "./Cart";
 
-const PopularClasses = ({ datas, isError, isPending }) => {
-  console.log("datas", datas);
+const Instructor = ({ data, error, pending }) => {
+  console.log("instructordatas", data);
 
-  const isEmpty = !datas?.data || datas.data.length === 0;
+  const isEmpty = !data?.data || data.data.length === 0;
 
   const renderMessge = (message) => {
     return (
@@ -21,8 +21,8 @@ const PopularClasses = ({ datas, isError, isPending }) => {
     );
   };
 
-  if (isError) return renderMessge("Failed to fetch data");
-  if (isPending) return renderMessge("Data is loading.....");
+  if (error) return renderMessge("Failed to fetch data");
+  if (pending) return renderMessge("Data is loading.....");
   if (isEmpty) return renderMessge("No classes available");
 
   return (
@@ -30,11 +30,11 @@ const PopularClasses = ({ datas, isError, isPending }) => {
       <div className="w-full ">
         <div className="max-w-7xl flex flex-col  mx-auto  items-center text-center mt-28">
           <h1 className="text-4xl  font-bold">
-            Our <span className="text-[#4F46E5]">Popular</span> Classes
+            Our <span className="text-[#4F46E5]">Instructor</span>
           </h1>
 
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 p-4 md:p-1 lg:p-1  gap-5 mt-10">
-            {datas.data.map((item) => (
+          <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 p-4 md:p-1 lg:p-1  gap-5 mt-10 mb-10">
+            {data.data.map((item) => (
               <Cart item={item} key={item.id} />
             ))}
           </div>
@@ -44,4 +44,4 @@ const PopularClasses = ({ datas, isError, isPending }) => {
   );
 };
 
-export default PopularClasses;
+export default Instructor;
