@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useFetch = () => {
+const usePopularFetch = () => {
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [isError, setIsError] = useState(false);
@@ -28,4 +28,4 @@ const useFetch = () => {
   return { blogs, isError, isPending };
 };
 
-export default useFetch;
+export default usePopularFetch;

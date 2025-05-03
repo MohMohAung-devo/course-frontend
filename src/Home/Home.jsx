@@ -1,9 +1,9 @@
 import Hero from "./Hero/Hero";
 import PopularClasses from "./Popular/PopularClasses";
-import useFetch from "../hook/useFetch";
+import usePopularFetch from "../hook/usePopularFetch";
 
 const Home = () => {
-  const { blogs: datas, isError, isPending } = useFetch();
+  const { blogs: datas, isError, isPending } = usePopularFetch();
 
   console.log(datas);
 
