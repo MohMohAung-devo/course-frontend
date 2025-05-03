@@ -1,0 +1,31 @@
+import { useEffect, useState } from "react";
+
+const useFetch = () => {
+  const [blogs, setBlogs] = useState(null);
+  const [isPending, setIsPending] = useState(false);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await fetch("http://localhost:3000/api/courseAll");
+        if (!result.ok) {
+          throw new Error(`http error: ${result.status}`);
+        }
+
+        const data = await result.json();
+        setBlogs(data);
+        setIsError(null);
+      } catch (err) {
+        setIsError(err.message);
+      } finally {
+        setIsPending(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return { blogs, isError, isPending };
+};
+
+export default useFetch;
