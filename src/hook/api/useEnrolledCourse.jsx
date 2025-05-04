@@ -28,6 +28,7 @@ const useEnrolledFetch = () => {
       const data = await reslut.json();
       setEnrolled(data);
       setError(null);
+      console.log(data);
     } catch (err) {
       setError(err.message);
     } finally {

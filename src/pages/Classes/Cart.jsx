@@ -4,9 +4,9 @@ import { useAuth } from "../../context/AuthContext";
 
 const Cart = ({ item }) => {
   const { user } = useAuth();
-  console.log(user._id);
+
   const { fetchData, enrolled, error, pending } = useEnrolledFetch();
-  const userId = user._id;
+  const userId = user?._id;
 
   const handleEnroll = () => {
     if (!user || !user._id) {
@@ -14,6 +14,8 @@ const Cart = ({ item }) => {
     }
     fetchData(userId, item._id);
   };
+
+  if (!item) return <div>Loading...</div>;
 
   return (
     <div className="shadow-lg rounded-lg p-3 flex flex-col justify-between border overflow-hidden hover:shadow-xl transition-shadow duration-300">
@@ -28,7 +30,8 @@ const Cart = ({ item }) => {
             Course Title:<span> {item.title}</span>
           </h3>
           <p className="text-md ">
-            Instructor:<span className="font-semibold"> {item.instructor}</span>
+            Instructor:
+            <span className="font-semibold"> {item.instructor?.name}</span>
           </p>
 
           <p className="text-md ">

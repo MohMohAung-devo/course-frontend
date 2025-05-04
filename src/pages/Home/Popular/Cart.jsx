@@ -11,7 +11,8 @@ const Cart = ({ item }) => {
             Course Title:<span> {item.title}</span>
           </h3>
           <p className="text-md ">
-            Instructor:<span className="font-semibold"> {item.instructor}</span>
+            Instructor:
+            <span className="font-semibold"> {item.instructor?.name}</span>
           </p>
 
           <p className="text-md ">
