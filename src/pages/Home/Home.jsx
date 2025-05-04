@@ -1,7 +1,7 @@
 import Hero from "./Hero/Hero";
 import PopularClasses from "./Popular/PopularClasses";
-import usePopularFetch from "../hook/usePopularFetch";
-import useInstructorFetch from "../hook/useInstructorFetch";
+import usePopularFetch from "../../hook/api/usePopularFetch";
+import useInstructorFetch from "../../hook/api/useInstructorFetch";
 import Instructor from "./Instructor/Instructor";
 
 const Home = () => {

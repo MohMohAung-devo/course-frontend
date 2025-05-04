@@ -1,6 +1,6 @@
 import React from "react";
 import Cart from "./Cart";
-import usePopularFetch from "../hook/usePopularFetch";
+import usePopularFetch from "../../hook/api/usePopularFetch";
 
 const Classes = () => {
   const { blogs: data, isError, isPending } = usePopularFetch();

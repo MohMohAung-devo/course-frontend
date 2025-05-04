@@ -1,5 +1,5 @@
 import React from "react";
-import useInstructorFetch from "../hook/useInstructorFetch";
+import useInstructorFetch from "../../hook/api/useInstructorFetch";
 import Cart from "./Cart";
 const Instructor = () => {
   const { instructor: data, pending, error } = useInstructorFetch();
