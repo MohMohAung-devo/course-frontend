@@ -30,7 +30,7 @@ const Instructor = ({ data, error, pending }) => {
       <div className="w-full ">
         <div className="max-w-7xl flex flex-col  mx-auto  items-center text-center mt-28">
           <h1 className="text-4xl  font-bold">
-            Our <span className="text-[#4F46E5]">Instructor</span>
+            Our <span className="text-[#4F46E5]">Popular </span>Instructor
           </h1>
 
           <div className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-4 p-4 md:p-1 lg:p-1  gap-5 mt-10 mb-10">
