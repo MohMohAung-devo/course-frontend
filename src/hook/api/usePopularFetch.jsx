@@ -4,13 +4,15 @@ const usePopularFetch = () => {
   const [blogs, setBlogs] = useState(null);
   const [isPending, setIsPending] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isStatus, setIsStatus] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const result = await fetch("http://localhost:3000/api/courseAll");
         if (!result.ok) {
-          throw new Error(`http error: ${result.status}`);
+          // throw new Error(`http error: ${result.message}`);
+          setIsStatus(result.status);
         }
 
         const data = await result.json();
@@ -25,7 +27,7 @@ const usePopularFetch = () => {
     fetchData();
   }, []);
 
-  return { blogs, isError, isPending };
+  return { blogs, isError, isPending, isStatus };
 };
 
 export default usePopularFetch;

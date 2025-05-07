@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 const Cart = ({ item }) => {
   const { user } = useAuth();
 
-  const { fetchData, enrolled, error, pending } = useEnrolledFetch();
+  const { fetchData, enrolled, error, pending} = useEnrolledFetch();
   const userId = user?._id;
 
   const handleEnroll = () => {
@@ -66,7 +66,11 @@ const Cart = ({ item }) => {
               {enrolled.message || "Enrolled successfully!"}
             </p>
           )}
-          {error && <p className="text-red-600 mt-2">{error}</p>}
+          {error && (
+            <p className="text-red-600 mt-2">
+              {error.message || "Already enrolled"}
+            </p>
+          )}
         </div>
       </div>
     </div>

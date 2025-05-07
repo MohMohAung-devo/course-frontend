@@ -20,8 +20,8 @@ const Navbar = () => {
     <div>
       <div className="w-full bg-indigo-600">
         <div className="max-w-7xl flex justify-between mx-auto p-3 md:p-3 items-center text-white font-bold cursor-pointer relative">
-          <Link to="/" className="font-bold text-2xl">
-            Logo
+          <Link to="/" className="font-bold text-2xl font-serif uppercase">
+            course
           </Link>
           <div className="md:hidden ">
             <div>
@@ -31,8 +31,6 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <div className="flex space-x-4">
-              {/* {!user && <Link to="/login">Login</Link>}
-              {!user && <Link to="/register">Register</Link>} */}
               <Link to="/">Home</Link>
               <Link to="/instructors">Instructors</Link>
               <Link to="/classes">Classes</Link>
@@ -41,14 +39,21 @@ const Navbar = () => {
               ) : (
                 <p onClick={handleProfieShow}>{user.userName}</p>
               )}
-              {show && (
-                <div className="absolute rounded-lg w-40 h-36 bg-black text-white top-20 right-10">
-                  <div className="p-4">
-                    <p className="text-sm">Email: {user.email}</p>
-                    <p className="text-sm">Setting</p>
-                  </div>
-                </div>
-              )}
+              <div className="hidden md:flex lg:flex">
+                {show && (
+                  <>
+                    <div className="hidden md:flex lg:flex absolute rounded-lg w-40 h-36 bg-black text-white top-20 right-10">
+                      <div className="p-4">
+                        <p className="text-sm">Email: {user.email}</p>
+                        <p className="text-sm">Setting</p>
+                        <Link className="text-sm" to="/profile/cart">
+                          TotalEnrolledCart
+                        </Link>
+                      </div>
+                    </div>
+                  </>
+                )}
+              </div>
               {!user && (
                 <>
                   <Link to="/login">Login</Link>
@@ -81,10 +86,16 @@ const Navbar = () => {
                   <div className="w-full bg-indigo-600  text-white  p-5 mx-auto overflow-y-auto">
                     <div
                       className="flex flex-col items-center justify-center space-y-5"
-                      onClick={() => setMenuShow(false)}
+                      // onClick={() => setMenuShow(false)}
                     >
-                      <Link to="/">Home</Link>
-                      <Link to="/instructors" className="text-white">
+                      <Link to="/" onClick={() => setMenuShow(false)}>
+                        Home
+                      </Link>
+                      <Link
+                        to="/instructors"
+                        className="text-white"
+                        onClick={() => setMenuShow(false)}
+                      >
                         Instructors
                       </Link>
                       <Link to="/classes">Classes</Link>
@@ -94,10 +105,13 @@ const Navbar = () => {
                         <p onClick={handleProfieShow}>{user.userName}</p>
                       )}
                       {show && (
-                        <div className="absolute rounded-lg w-40 h-36 bg-black text-white ">
-                          <div className="p-4">
+                        <div className="">
+                          <div className="p-2">
                             <p className="text-sm">Email: {user.email}</p>
                             <p className="text-sm">Setting</p>
+                            <Link className="text-sm" to="/profile/cart">
+                              TotalEnrolledCart
+                            </Link>
                           </div>
                         </div>
                       )}
