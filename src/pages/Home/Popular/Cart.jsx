@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Cart = ({ item }) => {
   return (
@@ -39,9 +40,12 @@ const Cart = ({ item }) => {
           </div> */}
         </div>
 
-        <button className="w-full bg-indigo-500 p-2 rounded-lg text-white hover:bg-indigo-600 transition-colors duration-300">
+        <Link
+          to={`/course/detail/${item._id}`}
+          className="w-full bg-indigo-500 p-2 rounded-lg text-white hover:bg-indigo-600 transition-colors duration-300"
+        >
           View Detail
-        </button>
+        </Link>
       </div>
     </div>
   );

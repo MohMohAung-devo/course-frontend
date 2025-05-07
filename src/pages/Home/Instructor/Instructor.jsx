@@ -2,8 +2,6 @@ import React from "react";
 import Cart from "./Cart";
 
 const Instructor = ({ data, error, pending }) => {
-  console.log("instructordatas", data);
-
   const isEmpty = !data?.data || data.data.length === 0;
 
   const renderMessge = (message) => {

@@ -2,8 +2,6 @@ import React from "react";
 import Cart from "./Cart";
 
 const PopularClasses = ({ datas, isError, isPending }) => {
-  console.log("datas", datas);
-
   const isEmpty = !datas?.data || datas.data.length === 0;
 
   const renderMessge = (message) => {

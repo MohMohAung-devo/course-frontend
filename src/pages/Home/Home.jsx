@@ -8,8 +8,6 @@ const Home = () => {
   const { blogs: datas, isError, isPending } = usePopularFetch();
   const { instructor: data, error, pending } = useInstructorFetch();
 
-  console.log(data);
-
   return (
     <div className="relative">
       <Hero />

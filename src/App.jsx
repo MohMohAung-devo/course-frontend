@@ -8,6 +8,7 @@ import PrivateRoutes from "./components/Auth/PrivateRoute";
 import Classes from "./pages/Classes/Classes";
 import Instructor from "./pages/Instructor/Instructor";
 import Cart from "./pages/Cart/Cart";
+import ClassesDetail from "./pages/Home/Popular/detail/ClassesDetail";
 
 const Home = lazy(() => import("./pages/Home/Home"));
 function App() {
@@ -24,6 +25,10 @@ function App() {
               <Route path="/instructors" element={<Instructor />} />
               <Route path="/classes" element={<Classes />} />
               <Route path="/profile/cart" element={<Cart />} />
+              <Route
+                path="/course/detail/:courseId"
+                element={<ClassesDetail />}
+              />
             </Route>
           </Routes>
         </AuthProvider>
