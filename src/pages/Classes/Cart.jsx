@@ -5,7 +5,7 @@ import { useAuth } from "../../context/AuthContext";
 const Cart = ({ item }) => {
   const { user } = useAuth();
 
-  const { fetchData, enrolled, error, pending} = useEnrolledFetch();
+  const { fetchData, enrolled, error, pending } = useEnrolledFetch();
   const userId = user?._id;
 
   const handleEnroll = () => {
@@ -58,7 +58,7 @@ const Cart = ({ item }) => {
             disabled={pending}
             className="w-full bg-indigo-500 p-2 rounded-lg text-white hover:bg-indigo-600 transition-colors duration-300"
           >
-            Enrolled
+            Add to Cart
           </button>
 
           {enrolled && (

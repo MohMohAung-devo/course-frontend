@@ -31,7 +31,7 @@ const PopularClasses = ({ datas, isError, isPending }) => {
             Our <span className="text-[#4F46E5]">Popular</span> Classes
           </h1>
 
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 p-4 md:p-1 lg:p-1  gap-5 mt-10">
+          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 p-4 md:p-1 lg:p-1  gap-10 mt-10">
             {datas.data.map((item) => (
               <Cart item={item} key={item.id} />
             ))}
